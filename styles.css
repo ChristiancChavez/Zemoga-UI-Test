@@ -1,0 +1,54 @@
+body {
+  font-family: "Lato", sans-serif;
+  color: white;
+  margin: 0;
+  font-size: 10px; }
+
+.presentation {
+  background-image: url("./Images/pope.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  padding: 50px 90px 35px 90px; }
+  @media only screen and (max-width: 480px) {
+    .presentation {
+      padding: 30px 70px 15px 70px; } }
+  @media only screen and (max-width: 1000px) {
+    .presentation {
+      padding: 30px 70px 15px 70px;
+      background-size: contain; } }
+
+.header {
+  display: grid;
+  grid-template-columns: 40% 60%;
+  align-items: center; }
+  @media only screen and (max-width: 680px) {
+    .header {
+      grid-template-rows: repeat(2, 1fr);
+      grid-template-columns: 100%; } }
+  .header__title {
+    margin: 0;
+    font-size: 3rem; }
+    @media only screen and (max-width: 680px) {
+      .header__title {
+        text-align: center;
+        margin-bottom: 10px; } }
+    @media only screen and (max-width: 770px) {
+      .header__title {
+        font-size: 1.5rem; } }
+  .header-nav {
+    display: flex;
+    justify-content: space-between; }
+    .header-nav__option {
+      font-size: 1.5rem; }
+      @media only screen and (max-width: 770px) {
+        .header-nav__option {
+          font-size: 1rem; } }
+    .header-nav__search {
+      background-image: url("./Images/search.png");
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: 20px;
+      width: 20px; }
+
+/*# sourceMappingURL=styles.css.map */

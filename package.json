@@ -1,0 +1,15 @@
+{
+  "name": "zemoga-ui-test",
+  "version": "1.0.0",
+  "description": "It's a landing page when users could vote for one of famous people who appear and voters can gives more or less popularity to celebrities.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Christian Chavez",
+  "license": "ISC",
+  "dependencies": {
+    "node-sass-chokidar": "^1.4.0",
+    "sass": "^1.25.0"
+  }
+}
