@@ -27,7 +27,8 @@ body {
       grid-template-columns: 100%; } }
   .header__title {
     margin: 0;
-    font-size: 2rem; }
+    font-size: 2.2rem;
+    font-weight: 700; }
     @media only screen and (max-width: 680px) {
       .header__title {
         text-align: center;
@@ -39,7 +40,12 @@ body {
     display: flex;
     justify-content: space-between; }
     .header-nav__option {
-      font-size: 1.5rem; }
+      display: inline-block;
+      font-size: 1.1rem;
+      color: white;
+      text-decoration: none;
+      font-weight: normal;
+      padding-top: 5px; }
       @media only screen and (max-width: 1000px) {
         .header-nav__option {
           font-size: 1rem; } }
@@ -52,11 +58,11 @@ body {
       background-image: url("./Images/search.png");
       background-repeat: no-repeat;
       background-size: cover;
-      height: 20px;
-      width: 20px; }
+      height: 30px;
+      width: 30px; }
       @media only screen and (max-width: 680px) {
         .header-nav__search {
-          height: 15px;
-          width: 15px; } }
+          height: 25px;
+          width: 25px; } }
 
 /*# sourceMappingURL=styles.css.map */
