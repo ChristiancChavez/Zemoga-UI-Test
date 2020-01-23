@@ -15,7 +15,7 @@ body {
   box-shadow: inset 0px 80px 14px -2px rgba(0, 0, 0, 0.44); }
   @media only screen and (max-width: 480px) {
     .presentation {
-      padding: 20px 50px 10px 50px; } }
+      padding: 20px 70px 10px 70px; } }
   @media only screen and (min-width: 900px) {
     .presentation {
       background-size: cover; } }
@@ -29,9 +29,7 @@ body {
       grid-template-rows: repeat(2, 30px);
       grid-template-columns: 100%; } }
   .header__title {
-    margin: 0;
-    font-size: 1.5rem;
-    font-weight: 700; }
+    margin: 0; }
     @media only screen and (max-width: 680px) {
       .header__title {
         text-align: center;
@@ -74,15 +72,12 @@ body {
 .square {
   background: gray;
   background-size: contain;
-  width: 380px;
-  height: 330px;
-  margin-top: 30px;
   padding: 0; }
   @media only screen and (max-width: 650px) {
     .square {
       margin-top: 1px;
       width: 160px;
-      height: 130px; } }
+      height: 140px; } }
   @media only screen and (min-width: 651px) {
     .square {
       margin-top: 10px;
@@ -103,20 +98,18 @@ body {
       margin-top: 80px; } }
 
 .opinion {
-  width: 350px;
-  height: 310px;
   position: absolute;
-  left: 62px;
-  top: 91px; }
-  @media only screen and (min-width: 481px) {
+  left: 100px;
+  top: 89px; }
+  @media only screen and (max-width: 481px) {
     .opinion {
-      left: 111px;
-      top: 122px; } }
+      top: 85px;
+      left: 100px; } }
   @media only screen and (max-width: 650px) {
     .opinion {
       width: 130px;
       height: 115px;
-      top: 100px; } }
+      top: 95px; } }
   @media only screen and (min-width: 651px) {
     .opinion {
       width: 182px;
@@ -133,59 +126,61 @@ body {
       width: 400px;
       height: 320px;
       left: 140px;
-      top: 180px; } }
-  .opinion-vote {
-    color: white; }
-    @media only screen and (min-width: 900px) {
-      .opinion-vote {
-        height: 260px; } }
-    .opinion-vote > h2 {
-      margin: 1px 0 2px 0;
-      font-size: 1.1rem; }
-      @media only screen and (min-width: 651px) {
-        .opinion-vote > h2 {
-          font-size: 1.3rem; } }
-      @media only screen and (min-width: 900px) {
-        .opinion-vote > h2 {
-          font-size: 2.4rem;
-          margin: 5px 0 15px 0; } }
-      @media only screen and (min-width: 1200px) {
-        .opinion-vote > h2 {
-          font-size: 3rem;
-          margin: 10px 0 25px 0; } }
-    .opinion-vote > p {
-      font-size: 0.5rem;
-      margin-bottom: 2px;
-      font-style: italic; }
-      @media only screen and (min-width: 651px) {
-        .opinion-vote > p {
-          font-size: 0.8rem; } }
-      @media only screen and (min-width: 900px) {
-        .opinion-vote > p {
-          font-size: 1rem;
-          margin-bottom: 16px; } }
-      @media only screen and (min-width: 1200px) {
-        .opinion-vote > p {
-          font-size: 1.5rem;
-          margin-bottom: 30px; } }
+      top: 180px;
+      color: white; } }
+  .opinion > h2 {
+    margin: 1px 0 2px 0;
+    font-size: 1.1rem; }
     @media only screen and (min-width: 651px) {
-      .opinion-vote > span {
-        font-size: 0.5rem; } }
+      .opinion > h2 {
+        font-size: 1.3rem; } }
     @media only screen and (min-width: 900px) {
-      .opinion-vote > span {
-        font-size: 0.7rem; } }
+      .opinion > h2 {
+        font-size: 2.4rem;
+        margin: 5px 0 15px 0; } }
     @media only screen and (min-width: 1200px) {
-      .opinion-vote > span {
-        font-size: 1rem; } }
+      .opinion > h2 {
+        font-size: 3rem;
+        margin: 10px 0 25px 0; } }
+  .opinion > p {
+    font-size: 0.5rem;
+    margin-bottom: 2px;
+    font-style: italic; }
     @media only screen and (min-width: 651px) {
-      .opinion-vote div + span {
-        font-size: 0.5rem; } }
+      .opinion > p {
+        font-size: 0.8rem; } }
     @media only screen and (min-width: 900px) {
-      .opinion-vote div + span {
-        font-size: 1.5rem; } }
+      .opinion > p {
+        font-size: 1rem;
+        margin-bottom: 16px; } }
     @media only screen and (min-width: 1200px) {
-      .opinion-vote div + span {
-        font-size: 1.8rem; } }
+      .opinion > p {
+        font-size: 1.5rem;
+        margin-bottom: 30px; } }
+  @media only screen and (max-width: 480px) {
+    .opinion > span {
+      font-size: 0.5rem; } }
+  @media only screen and (min-width: 651px) {
+    .opinion > span {
+      font-size: 0.5rem; } }
+  @media only screen and (min-width: 900px) {
+    .opinion > span {
+      font-size: 0.7rem; } }
+  @media only screen and (min-width: 1200px) {
+    .opinion > span {
+      font-size: 1rem; } }
+  @media only screen and (max-width: 480px) {
+    .opinion div + span {
+      font-size: 0.5rem; } }
+  @media only screen and (min-width: 651px) {
+    .opinion div + span {
+      font-size: 0.5rem; } }
+  @media only screen and (min-width: 900px) {
+    .opinion div + span {
+      font-size: 1.5rem; } }
+  @media only screen and (min-width: 1200px) {
+    .opinion div + span {
+      font-size: 1.8rem; } }
 
 .wikipedia {
   display: flex;
