@@ -3,10 +3,19 @@
     grid-template-columns: repeat(2, 80px)
     grid-template-rows: 1fr
     height: 30px
+    @media only screen and (min-width: 651px)
+        grid-template-columns: repeat(2, 107.5px)
+    @media only screen and (min-width: 900px)
+        grid-template-columns: repeat(2, 175px)
+        height: 60px
+    @media only screen and (min-width: 1200px)
+        grid-template-columns: repeat(2, 250px)
+        height: 80px
     &__thumb
         display: flex
         align-items: center
         justify-content: center
+        opacity: 0.9
         &--up
             background: #00e2e2 
         &--down
@@ -18,5 +27,11 @@
         background-size: cover
         height: 15px
         width: 15px
+        @media only screen and (min-width: 900px)
+            height: 25px
+            width: 25px 
+        @media only screen and (min-width: 1200px)
+            height: 35px
+            width: 35px
         &--down
             transform: rotateZ(180deg)

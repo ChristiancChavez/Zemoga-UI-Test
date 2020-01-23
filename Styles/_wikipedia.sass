@@ -3,10 +3,22 @@
     justify-content: flex-start
     align-items: center
     margin: 4px 0 6px 0
+    @media only screen and (min-width: 900px)
+        margin: 8px 0 15px 0
     &__logo
         height: 10px
         width: 10px
+        @media only screen and (min-width: 651px)
+        height: 15px
+        width: 15px
+        @media only screen and (min-width: 900px)
+            height: 20px
+            width: 20px  
     &__link
         color: white
         font-size: 0.3rem
         margin-left: 2px
+        @media only screen and (min-width: 651px)
+            font-size: 0.5rem
+        @media only screen and (min-width: 651px)
+            font-size: 0.7rem
