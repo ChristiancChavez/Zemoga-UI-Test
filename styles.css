@@ -2,18 +2,20 @@ body {
   font-family: "Lato", sans-serif;
   color: white;
   margin: 0;
-  font-size: 10px; }
+  font-size: 10px;
+  *box-sizing: border-box; }
 
 .presentation {
-  background-image: url("./Images/pope.jpg");
+  background-image: url("./Images/pope.png");
   background-repeat: no-repeat;
   background-size: contain;
+  background-position: top;
   height: 100vh;
-  padding: 50px 90px 35px 90px; }
+  padding: 50px 100px 35px 100px; }
   @media only screen and (max-width: 480px) {
     .presentation {
-      padding: 20px 50px 5px 50px; } }
-  @media only screen and (min-width: 1000px) {
+      padding: 25px 50px 10px 50px; } }
+  @media only screen and (min-width: 900px) {
     .presentation {
       background-size: cover; } }
 
@@ -64,5 +66,51 @@ body {
         .header-nav__search {
           height: 25px;
           width: 25px; } }
+
+.square {
+  background: inherit;
+  width: 380px;
+  height: 330px;
+  filter: blur(20px);
+  margin-top: 30px;
+  padding: 0; }
+  @media only screen and (max-width: 480px) {
+    .square {
+      margin-top: 3px;
+      width: 180px;
+      height: 130px; } }
+
+.opinion {
+  width: 350px;
+  height: 310px;
+  position: absolute;
+  left: 62px;
+  top: 115px; }
+  @media only screen and (max-width: 480px) {
+    .opinion {
+      width: 130px;
+      height: 115px; } }
+  .opinion-vote {
+    color: white; }
+    .opinion-vote > h2 {
+      margin: 1px 0 2px 0;
+      font-size: 1.1rem; }
+    .opinion-vote > p {
+      font-size: 0.5rem;
+      margin-bottom: 2px;
+      font-style: italic; }
+
+.wikipedia {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 4px 0 6px 0; }
+  .wikipedia__logo {
+    height: 10px;
+    width: 10px; }
+  .wikipedia__link {
+    color: white;
+    font-size: 0.3rem;
+    margin-left: 2px; }
 
 /*# sourceMappingURL=styles.css.map */
