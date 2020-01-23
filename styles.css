@@ -3,7 +3,7 @@ body {
   color: white;
   margin: 0;
   font-size: 10px;
-  *box-sizing: border-box; }
+  box-sizing: border-box; }
 
 .presentation {
   background-image: url("./Images/pope.png");
@@ -14,7 +14,7 @@ body {
   padding: 50px 100px 35px 100px; }
   @media only screen and (max-width: 480px) {
     .presentation {
-      padding: 25px 50px 10px 50px; } }
+      padding: 20px 50px 10px 50px; } }
   @media only screen and (min-width: 900px) {
     .presentation {
       background-size: cover; } }
@@ -25,7 +25,7 @@ body {
   align-items: center; }
   @media only screen and (max-width: 680px) {
     .header {
-      grid-template-rows: repeat(2, 1fr);
+      grid-template-rows: repeat(2, 30px);
       grid-template-columns: 100%; } }
   .header__title {
     margin: 0;
@@ -68,16 +68,16 @@ body {
           width: 25px; } }
 
 .square {
-  background: inherit;
+  background: gray;
+  background-size: contain;
   width: 380px;
   height: 330px;
-  filter: blur(20px);
   margin-top: 30px;
   padding: 0; }
   @media only screen and (max-width: 480px) {
     .square {
-      margin-top: 3px;
-      width: 180px;
+      margin-top: 1px;
+      width: 160px;
       height: 130px; } }
 
 .opinion {
@@ -85,7 +85,7 @@ body {
   height: 310px;
   position: absolute;
   left: 62px;
-  top: 115px; }
+  top: 91px; }
   @media only screen and (max-width: 480px) {
     .opinion {
       width: 130px;
@@ -112,5 +112,28 @@ body {
     color: white;
     font-size: 0.3rem;
     margin-left: 2px; }
+
+.thumbs {
+  display: grid;
+  grid-template-columns: repeat(2, 80px);
+  grid-template-rows: 1fr;
+  height: 30px; }
+  .thumbs__thumb {
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+    .thumbs__thumb--up {
+      background: #00e2e2; }
+    .thumbs__thumb--down {
+      background: #ffbc02; }
+  .thumbs__logo {
+    background-image: url("./Images/thumb-up.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 15px;
+    width: 15px; }
+    .thumbs__logo--down {
+      transform: rotateZ(180deg); }
 
 /*# sourceMappingURL=styles.css.map */

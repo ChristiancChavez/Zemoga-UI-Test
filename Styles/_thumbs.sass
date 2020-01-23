@@ -1,0 +1,22 @@
+.thumbs
+    display: grid
+    grid-template-columns: repeat(2, 80px)
+    grid-template-rows: 1fr
+    height: 30px
+    &__thumb
+        display: flex
+        align-items: center
+        justify-content: center
+        &--up
+            background: #00e2e2 
+        &--down
+            background: #ffbc02
+    &__logo
+        background-image: url('./Images/thumb-up.png')
+        background-position: center
+        background-repeat: no-repeat
+        background-size: cover
+        height: 15px
+        width: 15px
+        &--down
+            transform: rotateZ(180deg)
