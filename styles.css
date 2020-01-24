@@ -5,6 +5,12 @@ body {
   font-size: 10px;
   box-sizing: border-box; }
 
+.title-voting {
+  text-align: left;
+  font-size: 1.3rem;
+  margin: 30px 70px;
+  color: black; }
+
 .presentation {
   background-image: url("./Images/pope.png");
   background-repeat: no-repeat;
@@ -255,11 +261,30 @@ body {
 .small {
   height: 23px;
   margin-top: 9px;
-  margin-right: 5px; }
+  margin-right: 5px;
+  cursor: pointer;
+  border: 1px transparent solid; }
+  .small:hover {
+    border: 1px white solid; }
+  @media only screen and (min-width: 520px) {
+    .small {
+      height: 28px; } }
 
 .vote {
   padding: 5px;
   margin-right: 10px; }
+  @media only screen and (min-width: 520px) {
+    .vote {
+      padding: 7px; } }
+
+.voting {
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
+  grid-template-rows: 1fr;
+  height: 30px; }
+  @media only screen and (min-width: 520px) {
+    .voting {
+      height: 40px; } }
 
 .timeline {
   display: grid;
@@ -380,31 +405,52 @@ body {
 .characters {
   margin: 30px 70px;
   display: grid;
-  grid-template-rows: 30px repeat(4, 260px);
-  grid-template-columns: 1fr;
+  grid-template-rows: repeat(4, 260px);
+  grid-template-columns: auto;
   grid-row-gap: 15px; }
   @media only screen and (min-width: 480px) {
     .characters {
       margin: 30px 90px; } }
-  .characters__title {
-    text-align: left;
-    font-size: 1.3rem;
-    margin: 0;
-    color: black; }
+  @media only screen and (min-width: 520px) {
+    .characters {
+      justify-content: center;
+      grid-row-gap: 30px;
+      grid-template-rows: repeat(4, 360px); } }
+  @media only screen and (min-width: 756px) {
+    .characters {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      grid-column-gap: 15px; } }
 
 .character {
   background-image: url("./Images/kanye.png");
   background-repeat: no-repeat;
-  background-size: 155% 145%;
-  background-position: left;
-  box-shadow: inset 0px -130px 50px -2px rgba(0, 0, 0, 0.44);
+  background-size: 160% 150%;
+  background-position: center left;
+  box-shadow: inset 0px -160px 50px -2px rgba(0, 0, 0, 0.44);
   display: flex;
   flex-flow: column nowrap;
-  justify-content: flex-end; }
+  justify-content: flex-end;
+  width: 280px; }
+  @media only screen and (min-width: 520px) {
+    .character {
+      width: 350px; } }
+  @media only screen and (min-width: 756px) {
+    .character {
+      height: 341px;
+      width: 300px; } }
+  @media only screen and (min-width: 756px) and (min-width: 900px) {
+    .character {
+      height: 375px;
+      width: 358px; } }
+
   .character-profile {
     display: grid;
     grid-template-columns: 11% 89%;
     grid-template-rows: 60px; }
+    @media only screen and (min-width: 520px) {
+      .character-profile {
+        grid-template-columns: 12% 82%; } }
     .character-profile__info {
       display: flex;
       justify-items: center;
@@ -413,6 +459,9 @@ body {
       .character-profile__info > h2 {
         font-size: 1.8rem;
         margin: 3px 0; }
+        @media only screen and (min-width: 520px) {
+          .character-profile__info > h2 {
+            font-size: 2.1rem; } }
       .character-profile__info > span {
         font-size: 0.6rem; }
   .character__review {
@@ -420,6 +469,10 @@ body {
     font-size: 0.8rem;
     font-style: italic;
     margin: 2px 0 12px 0; }
+    @media only screen and (min-width: 520px) {
+      .character__review {
+        font-style: 0.9;
+        padding: 0 40px 0 40px; } }
   .character-votes {
     display: flex;
     flex-flow: row nowrap;
@@ -427,5 +480,8 @@ body {
     align-items: center;
     padding: 0 45px 0 30px;
     margin-bottom: 15px; }
+    @media only screen and (min-width: 520px) {
+      .character-votes {
+        padding: 0 45px 0 40px; } }
 
 /*# sourceMappingURL=styles.css.map */
