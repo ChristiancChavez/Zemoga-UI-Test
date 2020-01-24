@@ -261,7 +261,7 @@ body {
   left: 0;
   bottom: 0;
   margin-top: 10px; }
-  @media only screen and (min-width: 1000px) {
+  @media only screen and (min-width: 900px) {
     .timeline {
       grid-template-columns: 27% 73%; } }
   .timeline__text {
@@ -276,9 +276,6 @@ body {
     z-index: 3; }
     @media only screen and (min-width: 900px) {
       .timeline__text {
-        font-size: 0.7rem; } }
-    @media only screen and (min-width: 1000px) {
-      .timeline__text {
         font-size: 1.3rem; } }
     .timeline__text::after {
       content: " ";
@@ -290,6 +287,9 @@ body {
       position: absolute;
       top: 15px;
       right: -10px; }
+      @media only screen and (max-width: 900px) {
+        .timeline__text::after {
+          top: 20%; } }
   .timeline__days {
     opacity: 0.7;
     color: black;
@@ -297,9 +297,6 @@ body {
     background: white;
     padding: 7px 0 7px 20px; }
     @media only screen and (min-width: 900px) {
-      .timeline__days {
-        font-size: 1rem; } }
-    @media only screen and (min-width: 1000px) {
       .timeline__days {
         font-size: 1.8rem; } }
     .timeline__days > span {

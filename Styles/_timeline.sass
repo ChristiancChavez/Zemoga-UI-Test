@@ -7,7 +7,7 @@
     left: 0
     bottom: 0
     margin-top: 10px
-    @media only screen and (min-width: 1000px)
+    @media only screen and (min-width: 900px)
         grid-template-columns: 27% 73%
     &__text 
         background: black
@@ -19,9 +19,7 @@
         font-size: 0.5rem
         position: relative
         z-index: 3
-        @media only screen and (min-width: 900px)
-            font-size: 0.7rem 
-        @media only screen and (min-width: 1000px)   
+        @media only screen and (min-width: 900px)   
             font-size: 1.3rem
         &::after
             content: ' '
@@ -33,6 +31,8 @@
             position: absolute
             top: 15px
             right: -10px
+            @media only screen and (max-width: 900px)
+                top: 20%
             
     &__days
         opacity: 0.7
@@ -40,9 +40,7 @@
         font-size: 0.8rem
         background: white
         padding: 7px 0 7px 20px
-        @media only screen and (min-width: 900px)
-            font-size: 1rem
-        @media only screen and (min-width: 1000px)   
+        @media only screen and (min-width: 900px)   
             font-size: 1.8rem
         >span
             font-weight: bold
