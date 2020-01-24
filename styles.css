@@ -252,6 +252,15 @@ body {
     .thumbs__logo--down {
       transform: rotateZ(180deg); }
 
+.small {
+  height: 23px;
+  margin-top: 9px;
+  margin-right: 5px; }
+
+.vote {
+  padding: 5px;
+  margin-right: 10px; }
+
 .timeline {
   display: grid;
   grid-template-columns: 30% 70%;
@@ -367,5 +376,56 @@ body {
     @media only screen and (min-width: 700px) {
       .explanation__close {
         font-size: 1rem; } }
+
+.characters {
+  margin: 30px 70px;
+  display: grid;
+  grid-template-rows: 30px repeat(4, 260px);
+  grid-template-columns: 1fr;
+  grid-row-gap: 15px; }
+  @media only screen and (min-width: 480px) {
+    .characters {
+      margin: 30px 90px; } }
+  .characters__title {
+    text-align: left;
+    font-size: 1.3rem;
+    margin: 0;
+    color: black; }
+
+.character {
+  background-image: url("./Images/kanye.png");
+  background-repeat: no-repeat;
+  background-size: 155% 145%;
+  background-position: left;
+  box-shadow: inset 0px -130px 50px -2px rgba(0, 0, 0, 0.44);
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-end; }
+  .character-profile {
+    display: grid;
+    grid-template-columns: 11% 89%;
+    grid-template-rows: 60px; }
+    .character-profile__info {
+      display: flex;
+      justify-items: center;
+      flex-flow: column nowrap;
+      text-align: left; }
+      .character-profile__info > h2 {
+        font-size: 1.8rem;
+        margin: 3px 0; }
+      .character-profile__info > span {
+        font-size: 0.6rem; }
+  .character__review {
+    padding: 0 45px 0 30px;
+    font-size: 0.8rem;
+    font-style: italic;
+    margin: 2px 0 12px 0; }
+  .character-votes {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0 45px 0 30px;
+    margin-bottom: 15px; }
 
 /*# sourceMappingURL=styles.css.map */
