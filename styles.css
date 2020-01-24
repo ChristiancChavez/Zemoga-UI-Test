@@ -261,18 +261,22 @@ body {
 .small {
   height: 23px;
   margin-top: 9px;
-  margin-right: 5px;
-  cursor: pointer;
-  border: 1px transparent solid; }
-  .small:hover {
-    border: 1px white solid; }
+  margin-right: 5px; }
   @media only screen and (min-width: 520px) {
     .small {
       height: 28px; } }
+  @media only screen and (min-width: 1000px) {
+    .small {
+      height: 41px;
+      margin-top: 17px; } }
 
 .vote {
   padding: 5px;
-  margin-right: 10px; }
+  margin-right: 10px;
+  cursor: pointer;
+  border: 1px transparent solid; }
+  .vote:hover {
+    border: 1px white solid; }
   @media only screen and (min-width: 520px) {
     .vote {
       padding: 7px; } }
@@ -284,7 +288,13 @@ body {
   height: 30px; }
   @media only screen and (min-width: 520px) {
     .voting {
-      height: 40px; } }
+      height: 50px; } }
+  @media only screen and (min-width: 900px) {
+    .voting {
+      height: 70px; } }
+  @media only screen and (min-width: 520px) {
+    .voting {
+      height: 90px; } }
 
 .timeline {
   display: grid;
@@ -420,30 +430,46 @@ body {
     .characters {
       grid-template-columns: repeat(2, 1fr);
       grid-template-rows: repeat(2, 1fr);
-      grid-column-gap: 15px; } }
+      grid-column-gap: 15px;
+      grid-row-gap: 15px; } }
+  @media only screen and (min-width: 900px) {
+    .characters {
+      justify-items: center;
+      grid-row-gap: 15px; } }
+  @media only screen and (min-width: 1200px) {
+    .characters {
+      grid-row-gap: 100px; } }
 
 .character {
   background-image: url("./Images/kanye.png");
   background-repeat: no-repeat;
   background-size: 160% 150%;
   background-position: center left;
-  box-shadow: inset 0px -160px 50px -2px rgba(0, 0, 0, 0.44);
+  box-shadow: inset 0px -170px 50px -2px rgba(0, 0, 0, 0.44);
   display: flex;
   flex-flow: column nowrap;
   justify-content: flex-end;
   width: 280px; }
   @media only screen and (min-width: 520px) {
     .character {
-      width: 350px; } }
+      width: 380px; } }
   @media only screen and (min-width: 756px) {
     .character {
       height: 341px;
       width: 300px; } }
-  @media only screen and (min-width: 756px) and (min-width: 900px) {
+  @media only screen and (min-width: 900px) {
     .character {
       height: 375px;
-      width: 358px; } }
-
+      width: 358px;
+      box-shadow: inset 0px -260px 50px -2px rgba(0, 0, 0, 0.44); } }
+  @media only screen and (min-width: 1000px) {
+    .character {
+      height: 390px;
+      width: 400px; } }
+  @media only screen and (min-width: 1200px) {
+    .character {
+      height: 690px;
+      width: 700px; } }
   .character-profile {
     display: grid;
     grid-template-columns: 11% 89%;
@@ -451,6 +477,9 @@ body {
     @media only screen and (min-width: 520px) {
       .character-profile {
         grid-template-columns: 12% 82%; } }
+    @media only screen and (min-width: 1000px) {
+      .character-profile {
+        grid-template-rows: 120px; } }
     .character-profile__info {
       display: flex;
       justify-items: center;
@@ -462,8 +491,20 @@ body {
         @media only screen and (min-width: 520px) {
           .character-profile__info > h2 {
             font-size: 2.1rem; } }
+        @media only screen and (min-width: 900px) {
+          .character-profile__info > h2 {
+            font-size: 2.4rem; } }
+        @media only screen and (min-width: 1000px) {
+          .character-profile__info > h2 {
+            font-size: 3.5rem; } }
       .character-profile__info > span {
         font-size: 0.6rem; }
+        @media only screen and (min-width: 900px) {
+          .character-profile__info > span {
+            font-size: 0.8rem; } }
+        @media only screen and (min-width: 1000px) {
+          .character-profile__info > span {
+            font-size: 1.2rem; } }
   .character__review {
     padding: 0 45px 0 30px;
     font-size: 0.8rem;
@@ -471,8 +512,15 @@ body {
     margin: 2px 0 12px 0; }
     @media only screen and (min-width: 520px) {
       .character__review {
-        font-style: 0.9;
+        font-size: 0.9rem;
         padding: 0 40px 0 40px; } }
+    @media only screen and (min-width: 900px) {
+      .character__review {
+        font-size: 1.1rem;
+        padding: 0 60px 0 80px; } }
+    @media only screen and (min-width: 1000px) {
+      .character__review {
+        font-size: 1.4rem; } }
   .character-votes {
     display: flex;
     flex-flow: row nowrap;
@@ -482,6 +530,27 @@ body {
     margin-bottom: 15px; }
     @media only screen and (min-width: 520px) {
       .character-votes {
-        padding: 0 45px 0 40px; } }
+        padding: 0 45px 0 40px;
+        margin-bottom: 25px; } }
+    @media only screen and (min-width: 900px) {
+      .character-votes {
+        padding: 0 60px 0 80px;
+        margin-bottom: 25px; } }
+    @media only screen and (min-width: 1000px) {
+      .character-votes {
+        margin-bottom: 35px; } }
+    .character-votes__adv {
+      background: transparent;
+      color: white;
+      font-size: 0.8rem;
+      padding: 12px 17px;
+      font-family: "Lato", sans-serif;
+      border: 1px solid white; }
+      @media only screen and (min-width: 900px) {
+        .character-votes__adv {
+          font-size: 1rem; } }
+      @media only screen and (min-width: 1000px) {
+        .character-votes__adv {
+          font-size: 1.5rem; } }
 
 /*# sourceMappingURL=styles.css.map */

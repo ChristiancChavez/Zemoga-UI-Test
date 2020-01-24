@@ -1,2 +1,7 @@
+
+const imagesCharacters = ['cristina', 'kanye', 'malala', 'kanye'];
+
 let mainCharacters = document.getElementById('mainCharacters');
-console.log(mainCharacters);
+for(i=0; i < 3; i++){
+    
+}
