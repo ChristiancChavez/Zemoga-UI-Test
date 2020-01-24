@@ -5,22 +5,134 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
-    <title>Zemoga Test</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato:100i,400&display=swap" rel="stylesheet">
+    <title>Zemoga UI Test</title>
 </head>
 <body>
-    <div class="presentation">
+    <section class="presentation">
         <header class="header">
             <h1 class="header__title">Rule of Thumb.</h1>
             <nav class="header-nav">
-                <span class="header-nav__option">Past Trials</span>
-                <span class="header-nav__option">How It Works</span>
-                <span class="header-nav__option">Log In / Sign Up</span>
+                <a  href="" class="header-nav__option">Past Trials</a  href="">
+                <a  href="" class="header-nav__option">How It Works</a>
+                <a  href="" class="header-nav__option">Log In / Sign Up</a>
                 <span class="header-nav__search"></span>
             </nav>
         </header>
-    </div>
+        <div class="square"></div>
+        <div class="opinion">
+            <span >What's your opinion on</span>
+            <h2>Pope Francis?</h2>
+            <p>He's talking tough on clergy sexual abuse, but is he just another papal pervert protector? 
+                (thumbs down) or a true pedophile punishing pontiff? (thumbs up)</p>
+            <div class="wikipedia">
+                <img class="wikipedia__logo" src="./Images/wikipedia-logo.png" alt="wikipedia">
+                <a class="wikipedia__link" href="https://en.wikipedia.org/wiki/Pope_Francis_and_homosexuality">More Information</a>
+            </div>
+            <span>What's Your Veredict?</span>
+        </div>
+        <div class="thumbs">
+            <div class="thumbs__thumb thumbs__thumb--up"><span class="thumbs__logo"></span></div>
+            <div class="thumbs__thumb thumbs__thumb--down"><span class="thumbs__logo thumbs__logo--down"></span></div>
+        </div>
+        <div class="timeline">
+            <span class="timeline__text">closing in</span>
+            <span class="timeline__days"><span>22</span>days</span>
+        </div>
+    </section>
+    <section class="explanation">
+        <div class="explanation-title">
+            <span>Speak out. Be heard.</span> 
+            <span>Be Counted</span>
+        </div>
+        <p class="explanation__text">Rule of Thumb is a crowd sourced court of public opinion where anyone and everyone can speak out and 
+            speak freely.It's easy: You share your opinion, we analyze and put the data in a public report.
+        </p>
+        <span class="explanation__close">X</span>
+    </section>
+    <div class="title-voting"><h3>Votes</h3></div>
+    
+    <section class="characters" id="mainCharacters">
+        <div class="character">
+            <div class="character-profile">
+                <div class="thumbs__thumb thumbs__thumb--up small "><span class="thumbs__logo" id="thumb"></span></div>
+                <div class="character-profile__info">
+                    <h2>Kanye West</h2>
+                    <span><b>1 month ago</b>in Entertainment</span>
+                </div>
+            </div>
+            <p class="character__review">Vestibulum diam ante, porttitor a odio eget, rhoncus neque. Aenean eu velit libero</p>
+            <div class="character-votes">
+                <div class="thumbs__thumb thumbs__thumb--up vote"><span class="thumbs__logo"></span></div>
+                <div class="thumbs__thumb thumbs__thumb--down vote"><span class="thumbs__logo thumbs__logo--down"></span></div>
+                <span class="character-votes__adv">Vote now</span>
+            </div>
+            <div class="voting">
+                <div class="thumbs__thumb thumbs__thumb--up"><span class="thumbs__logo"></span></div>
+                <div class="thumbs__thumb thumbs__thumb--down"><span class="thumbs__logo thumbs__logo--down"></span></div>
+            </div>
+        </div>
 
+        <div class="character">
+            <div class="character-profile">
+                <div class="thumbs__thumb thumbs__thumb--up small "><span class="thumbs__logo" id="thumb"></span></div>
+                <div class="character-profile__info">
+                    <h2>Kanye West</h2>
+                    <span><b>1 month ago</b>in Entertainment</span>
+                </div>
+            </div>
+            <p class="character__review">Vestibulum diam ante, porttitor a odio eget, rhoncus neque. Aenean eu velit libero</p>
+            <div class="character-votes">
+                <div class="thumbs__thumb thumbs__thumb--up vote"><span class="thumbs__logo"></span></div>
+                <div class="thumbs__thumb thumbs__thumb--down vote"><span class="thumbs__logo thumbs__logo--down"></span></div>
+                <button class="character-votes__adv">Vote now</button>
+            </div>
+            <div class="voting">
+                <div class="thumbs__thumb thumbs__thumb--up"><span class="thumbs__logo"></span></div>
+                <div class="thumbs__thumb thumbs__thumb--down"><span class="thumbs__logo thumbs__logo--down"></span></div>
+            </div>
+        </div>
+
+        <div class="character">
+            <div class="character-profile">
+                <div class="thumbs__thumb thumbs__thumb--up small "><span class="thumbs__logo" id="thumb"></span></div>
+                <div class="character-profile__info">
+                    <h2>Kanye West</h2>
+                    <span><b>1 month ago</b> in Entertainment</span>
+                </div>
+            </div>
+            <p class="character__review">Vestibulum diam ante, porttitor a odio eget, rhoncus neque. Aenean eu velit libero</p>
+            <div class="character-votes">
+                <div class="thumbs__thumb thumbs__thumb--up vote"><span class="thumbs__logo"></span></div>
+                <div class="thumbs__thumb thumbs__thumb--down vote"><span class="thumbs__logo thumbs__logo--down"></span></div>
+                <button class="character-votes__adv">Vote now</button>
+            </div>
+            <div class="voting">
+                <div class="thumbs__thumb thumbs__thumb--up"><span class="thumbs__logo"></span></div>
+                <div class="thumbs__thumb thumbs__thumb--down"><span class="thumbs__logo thumbs__logo--down"></span></div>            </div>
+        </div>
+
+        <div class="character">
+            <div class="character-profile">
+                <div class="thumbs__thumb thumbs__thumb--up small "><span class="thumbs__logo" id="thumb"></span></div>
+                <div class="character-profile__info">
+                    <h2>Kanye West</h2>
+                    <span><b>1 month ago</b>in Entertainment</span>
+                </div>
+            </div>
+            <p class="character__review">Vestibulum diam ante, porttitor a odio eget, rhoncus neque. Aenean eu velit libero</p>
+            <div class="character-votes">
+                <div class="thumbs__thumb thumbs__thumb--up vote"><span class="thumbs__logo"></span></div>
+                <div class="thumbs__thumb thumbs__thumb--down vote"><span class="thumbs__logo thumbs__logo--down"></span></div>
+                <button class="character-votes__adv">Vote now</button>
+            </div>
+            <div class="voting">
+                <div class="thumbs__thumb thumbs__thumb--up"><span class="thumbs__logo"></span></div>
+                <div class="thumbs__thumb thumbs__thumb--down"><span class="thumbs__logo thumbs__logo--down"></span></div>
+            </div>
+        </div>
+        
+    </section>
 
 
     <script src="index.js"></script>

@@ -4,26 +4,39 @@
     grid-template-columns: 40% 60%
     align-items: center
     @media only screen and (max-width: 680px)
-        grid-template-rows: repeat(2, 1fr)
+        grid-template-rows: repeat(2, 30px)
         grid-template-columns: 100%
     &__title
         margin: 0
-        font-size: 3rem
         @media only screen and (max-width: 680px)
             text-align: center
             margin-bottom: 10px
-        @media only screen and (max-width: 770px)
-            font-size: 1.5rem
+        @media only screen and (max-width: 800px)
+            font-size: 1rem
+        @media only screen and (min-width: 900px)
+            font-size: 2.3rem
     &-nav
         display: flex
         justify-content: space-between
         &__option
-            font-size: 1.5rem
-            @media only screen and (max-width: 770px)
-                font-size: 1rem
+            display: inline-block
+            font-size: 1.1rem
+            color: white
+            text-decoration: none 
+            font-weight: normal
+            padding-top: 5px
+            @media only screen and (max-width: 900px)
+                font-size: 0.7rem
+            @media only screen and (max-width: 680px)
+                text-align: center
+                flex-flow: wrap
+                font-size: 0.7rem          
         &__search
             background-image: url('./Images/search.png')
             background-repeat: no-repeat
             background-size: cover
             height: $search-icon-size
             width: $search-icon-size
+            @media only screen and (max-width: 680px)
+                height: $search-icon-size-400px
+                width: $search-icon-size-400px
