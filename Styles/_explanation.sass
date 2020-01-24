@@ -1,0 +1,55 @@
+.explanation
+    background: lightgray
+    opacity: 0.7
+    padding: 5px
+    color: black
+    display: grid
+    grid-template-columns: 1fr   
+    grid-template-rows: 35px 1fr
+    align-items: center
+    justify-content: center
+    margin: 20px 70px
+    @media only screen and (min-width: 480px)
+        margin: 20px 90px
+        padding: 10px
+    @media only screen and (min-width: 700px)
+        grid-template-rows: 1fr
+        grid-template-columns: 150px 1fr 35px
+        padding: 15px
+    @media only screen and (min-width: 1200px)
+        padding: 20px
+        grid-template-columns: 250px 1fr 50px
+    &-title
+        display: flex
+        justify-content: space-around
+        flex-flow: column nowrap
+        align-items: center
+        font-size: 0.9rem
+        color: black
+        @media only screen and (min-width: 700px)
+            padding-right: 3px
+        @media only screen and (min-width: 1200px)
+            font-size: 1.4rem
+        span:last-child
+            font-weight: bold
+            font-size: 1.2rem
+            @media only screen and (min-width: 900px)
+                font-size: 1.5rem
+            @media only screen and (min-width: 1200px)
+                font-size: 2.5rem
+    &__text
+        font-size: 0.7rem
+        text-align: center
+        @media only screen and (min-width: 700px)
+            padding-left: 3px
+            text-align: left
+        @media only screen and (min-width: 900px)
+            font-size: 0.9rem
+        @media only screen and (min-width: 1200px)
+            font-size: 1rem
+    &__close
+        text-align: center
+        align-self: center
+        @media only screen and (min-width: 700px)
+            font-size: 1rem
+    

@@ -305,4 +305,70 @@ body {
     .timeline__days > span {
       font-weight: bold; }
 
+.explanation {
+  background: lightgray;
+  opacity: 0.7;
+  padding: 5px;
+  color: black;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 35px 1fr;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 70px; }
+  @media only screen and (min-width: 480px) {
+    .explanation {
+      margin: 20px 90px;
+      padding: 10px; } }
+  @media only screen and (min-width: 700px) {
+    .explanation {
+      grid-template-rows: 1fr;
+      grid-template-columns: 150px 1fr 35px;
+      padding: 15px; } }
+  @media only screen and (min-width: 1200px) {
+    .explanation {
+      padding: 20px;
+      grid-template-columns: 250px 1fr 50px; } }
+  .explanation-title {
+    display: flex;
+    justify-content: space-around;
+    flex-flow: column nowrap;
+    align-items: center;
+    font-size: 0.9rem;
+    color: black; }
+    @media only screen and (min-width: 700px) {
+      .explanation-title {
+        padding-right: 3px; } }
+    @media only screen and (min-width: 1200px) {
+      .explanation-title {
+        font-size: 1.4rem; } }
+    .explanation-title span:last-child {
+      font-weight: bold;
+      font-size: 1.2rem; }
+      @media only screen and (min-width: 900px) {
+        .explanation-title span:last-child {
+          font-size: 1.5rem; } }
+      @media only screen and (min-width: 1200px) {
+        .explanation-title span:last-child {
+          font-size: 2.5rem; } }
+  .explanation__text {
+    font-size: 0.7rem;
+    text-align: center; }
+    @media only screen and (min-width: 700px) {
+      .explanation__text {
+        padding-left: 3px;
+        text-align: left; } }
+    @media only screen and (min-width: 900px) {
+      .explanation__text {
+        font-size: 0.9rem; } }
+    @media only screen and (min-width: 1200px) {
+      .explanation__text {
+        font-size: 1rem; } }
+  .explanation__close {
+    text-align: center;
+    align-self: center; }
+    @media only screen and (min-width: 700px) {
+      .explanation__close {
+        font-size: 1rem; } }
+
 /*# sourceMappingURL=styles.css.map */
