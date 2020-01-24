@@ -8,17 +8,18 @@ const characters = [
 
 let mainCharacters = document.getElementById('mainCharacters');
 for(i=0; i <= 3; i++){
-    const character = characters[i];
+    const people = characters[i];
+    console.log(people)
 
     let character = document.createElement('div');
     character.classList.add('character');
-    character.style.background = url(`${character.image}`);
+    character.style.background = `url(${people.image})`;
 
     let characterProfile = document.createElement('div');
     characterProfile.classList.add('character-profile');
 
     let thumbsThumb = document.createElement('div');
-    thumbsThumb.classList.add('thumbs__thumb thumbs__thumb--up small');
+    thumbsThumb.classList.add('thumbs__thumb', 'thumbs__thumb--up', 'small');
     
     let spanThumbs = document.createElement('span');
     spanThumbs.classList.add('thumbs__logo');
@@ -27,10 +28,10 @@ for(i=0; i <= 3; i++){
     characterProfileInfo.classList.add('character-profile__info');
 
     let characterProfileInfoName = document.createElement('h2');
-    characterProfileInfoName.innerHTML=`${character.name}`;
+    characterProfileInfoName.innerHTML=`${people.name}`;
 
-    let ProfileReview = document.createElement('span');
-    characterProfileInfo.innerHTML= `1 month ago in ${character.category}`
+    let profileReview = document.createElement('span');
+    profileReview.innerHTML= `1 month ago in ${people.category}`
 
     let characterReview = document.createElement('p');
     characterReview.classList.add('character__review');
@@ -40,35 +41,35 @@ for(i=0; i <= 3; i++){
     characterVotes.classList.add('character-votes');
 
     let thumbsVoteUp = document.createElement('div');
-    thumbsVoteUp.classList.add('thumbs__thumb thumbs__thumb--up vote');
+    thumbsVoteUp.classList.add('thumbs__thumb', 'thumbs__thumb--up', 'vote');
 
     let spanVotesUp = document.createElement('span');
     spanVotesUp.classList.add('thumbs__logo');
 
     let thumbsVoteDown = document.createElement('div');
-    thumbsVoteDown.classList.add('thumbs__thumb thumbs__thumb--down vote');
+    thumbsVoteDown.classList.add('thumbs__thumb', 'thumbs__thumb--down', 'vote');
 
     let spanVotesDown = document.createElement('span');
-    spanVotesDown.classList.add('thumbs__logo thumbs__logo--down');    
+    spanVotesDown.classList.add('thumbs__logo', 'thumbs__logo--down');    
 
     let characterVotesAdv = document.createElement('span');
     characterVotesAdv.classList.add('character-votes__adv'); 
     characterVotesAdv.innerHTML = 'Vote now';
 
     let voting = document.createElement('div');
-    characterVotesAdv.classList.add('character-votes__adv'); 
+    voting.classList.add('voting'); 
 
     let thumbsVotingUp = document.createElement('div');
-    thumbsVotingUp.classList.add('thumbs__thumb thumbs__thumb--up'); 
+    thumbsVotingUp.classList.add('thumbs__thumb', 'thumbs__thumb--up'); 
 
     let spanVotingUp = document.createElement('span');
     spanVotingUp.classList.add('thumbs__logo'); 
 
     let thumbsVotingDown = document.createElement('div');
-    thumbsVotingDown.classList.add('thumbs__thumb thumbs__thumb--down'); 
+    thumbsVotingDown.classList.add('thumbs__thumb', 'thumbs__thumb--down'); 
 
     let spanVotingDown = document.createElement('span');
-    spanVotingDown.classList.add('thumbs__logo thumbs__logo--down'); 
+    spanVotingDown.classList.add('thumbs__logo', 'thumbs__logo--down'); 
 
 
 
@@ -78,7 +79,7 @@ for(i=0; i <= 3; i++){
     thumbsThumb.appendChild(spanThumbs);
     character.appendChild(characterProfileInfo);
     characterProfileInfo.appendChild(characterProfileInfoName);
-    characterProfileInfo.appendChild(ProfileReview);
+    characterProfileInfo.appendChild(profileReview);
     character.appendChild(characterReview);
     character.appendChild(characterVotes);
     characterVotes.appendChild(thumbsVoteUp);
