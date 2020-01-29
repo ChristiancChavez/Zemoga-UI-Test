@@ -246,7 +246,8 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     height: 20px;
-    width: 20px; }
+    width: 20px;
+    cursor: pointer; }
     @media only screen and (min-width: 900px) {
       .thumbs__logo {
         height: 25px;
@@ -276,7 +277,6 @@ body {
 .vote {
   padding: 5px;
   margin-right: 10px;
-  cursor: pointer;
   border: 2px transparent solid; }
   @media only screen and (min-width: 520px) {
     .vote {
@@ -296,6 +296,9 @@ body {
   @media only screen and (min-width: 1200px) {
     .voting {
       height: 80px; } }
+
+.border {
+  border: 2px white solid; }
 
 .timeline {
   display: grid;
@@ -476,7 +479,8 @@ body {
         grid-template-columns: 12% 82%; } }
     @media only screen and (min-width: 900px) {
       .character-profile {
-        grid-template-rows: 120px; } }
+        grid-template-rows: 120px;
+        margin-bottom: 30px; } }
     @media only screen and (min-width: 1000px) {
       .character-profile {
         grid-template-rows: 120px; } }
@@ -488,7 +492,7 @@ body {
       .character-profile__info > h2 {
         font-size: 1.8rem;
         margin: 3px 0; }
-        @media only screen and (min-width: 720px) {
+        @media only screen and (min-width: 750px) {
           .character-profile__info > h2 {
             font-size: 2.1rem; } }
         @media only screen and (min-width: 900px) {
@@ -524,7 +528,8 @@ body {
     justify-content: flex-start;
     align-items: center;
     padding: 0 45px 0 30px;
-    margin-bottom: 15px; }
+    margin-bottom: 15px;
+    cursor: pointer; }
     @media only screen and (min-width: 520px) {
       .character-votes {
         padding: 0 45px 0 40px;
@@ -545,5 +550,8 @@ body {
       @media only screen and (min-width: 1000px) {
         .character-votes__adv {
           font-size: 1.5rem; } }
+
+.hidden {
+  display: none; }
 
 /*# sourceMappingURL=styles.css.map */

@@ -27,18 +27,21 @@ let thumbsVotingDown = document.createElement('div');
 let spanVotingDown = document.createElement('span');
 
 
+getIdThumbVote = (e) => {
+    let idThumb = e.target.id;
 
+    idThumb === 'upVote' ? thumbsVoteUp.classList.add('border') : thumbsVoteDown.classList.add('border')
+    return idThumb;
+}
 
-
-const getIdThumbVote = (e) => {
-    const borderWhite = 'solid 2px white'
-    let idThumb =  e.target.id;
-    if(idThumb === 'upVote'){
-        thumbsVoteUp.style.border = borderWhite
-    }
-    else {
-        thumbsVoteDown.style.border = borderWhite
-    }
+addVoteNow = (e) => {
+    const text = e.target.innerText;
+    e.target.innerText = 'Vote again';
+    characterReview.innerHTML = 'Thank you for voting!';
+    thumbsVoteUp.classList.toggle('hidden');
+    thumbsVoteDown.classList.toggle('hidden');
+    spanVotesUp.classList.remove('border');
+    spanVotesDown.classList.remove('border');
 }
 
 
@@ -57,14 +60,15 @@ characters.map(people => {
     characterReview.innerHTML=`Vestibulum diam ante, porttitor a odio eget, rhoncus neque. Aenean eu velit libero`;
     characterVotes.classList.add('character-votes');
     thumbsVoteUp.classList.add('thumbs__thumb', 'thumbs__thumb--up', 'vote');
-    thumbsVoteUp.setAttribute("id", "upVote");
-    thumbsVoteUp.addEventListener("click", getIdThumbVote);
     spanVotesUp.classList.add('thumbs__logo');
+    spanVotesUp.setAttribute("id", "upVote");
+    spanVotesUp.addEventListener("click", getIdThumbVote);
     thumbsVoteDown.classList.add('thumbs__thumb', 'thumbs__thumb--down', 'vote');
-    thumbsVoteDown.setAttribute("id", "downVote");
-    thumbsVoteDown.addEventListener("click", getIdThumbVote);
-    spanVotesDown.classList.add('thumbs__logo', 'thumbs__logo--down');    
+    spanVotesDown.classList.add('thumbs__logo', 'thumbs__logo--down');  
+    spanVotesDown.setAttribute("id", "downVote");
+    spanVotesDown.addEventListener("click", getIdThumbVote);  
     characterVotesAdv.classList.add('character-votes__adv'); 
+    characterVotesAdv.addEventListener("click", addVoteNow);
     characterVotesAdv.innerHTML = 'Vote now';
     voting.classList.add('voting'); 
     thumbsVotingUp.classList.add('thumbs__thumb', 'thumbs__thumb--up'); 
