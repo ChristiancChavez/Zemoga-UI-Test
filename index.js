@@ -25,16 +25,23 @@ let thumbsVotingUp = document.createElement('div');
 let spanVotingUp = document.createElement('span');
 let thumbsVotingDown = document.createElement('div');
 let spanVotingDown = document.createElement('span');
+let numberVotingUp = document.createElement('span');
+let numberVotingDown = document.createElement('span');
 
 
 getIdThumbVote = (e) => {
     let idThumb = e.target.id;
 
-    idThumb === 'upVote' ? thumbsVoteUp.classList.add('border') : thumbsVoteDown.classList.add('border')
+    thumbsVoteUp.classList.remove('border');
+    thumbsVoteDown.classList.remove('border')
+
+    idThumb === 'upVote' ? thumbsVoteUp.classList.add('border') : thumbsVoteDown.classList.add('border');
+
     return idThumb;
 }
 
 addVoteNow = (e) => {
+    const thumbsIdBtn = e.target.id;
     const text = e.target.textContent;
     const textCharacterReview = characterReview.textContent;
     const principalTextCharacter = 'Vestibulum diam ante, porttitor a odio eget, rhoncus neque. Aenean eu velit libero';
@@ -44,6 +51,9 @@ addVoteNow = (e) => {
     thumbsVoteDown.classList.remove('border');
     thumbsVoteUp.classList.toggle('hidden');
     thumbsVoteDown.classList.toggle('hidden');
+
+    // thumbsIdBtn === 'upVote' ? thumbsVotingUp.appendChild
+
 }
 
 
@@ -73,10 +83,14 @@ characters.map(people => {
     characterVotesAdv.addEventListener("click", addVoteNow);
     characterVotesAdv.innerHTML = 'Vote now';
     voting.classList.add('voting'); 
-    thumbsVotingUp.classList.add('thumbs__thumb', 'thumbs__thumb--up'); 
+    thumbsVotingUp.classList.add('thumbs__thumb', 'thumbs__thumb--up', 'progress'); 
     spanVotingUp.classList.add('thumbs__logo'); 
-    thumbsVotingDown.classList.add('thumbs__thumb', 'thumbs__thumb--down'); 
+    thumbsVotingDown.classList.add('thumbs__thumb', 'thumbs__thumb--down', 'progress-left'); 
     spanVotingDown.classList.add('thumbs__logo', 'thumbs__logo--down'); 
+    numberVotingUp.classList.add('voting__number'); 
+    numberVotingUp.innerHTML = '0%';
+    numberVotingDown.innerHTML = '0%';
+    numberVotingDown.classList.add('voting__number', 'voting__number--right'); 
 
     mainCharacters.appendChild(character);
     character.appendChild(characterProfile);
@@ -95,8 +109,11 @@ characters.map(people => {
     character.appendChild(voting);
     voting.appendChild(thumbsVotingUp);
     thumbsVotingUp.appendChild(spanVotingUp);
+    thumbsVotingUp.appendChild(numberVotingUp);
     voting.appendChild(thumbsVotingDown);
+    thumbsVotingDown.appendChild(numberVotingDown);
     thumbsVotingDown.appendChild(spanVotingDown);
+
 });
 
     

@@ -246,8 +246,7 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     height: 20px;
-    width: 20px;
-    cursor: pointer; }
+    width: 20px; }
     @media only screen and (min-width: 900px) {
       .thumbs__logo {
         height: 25px;
@@ -284,9 +283,10 @@ body {
 
 .voting {
   display: grid;
-  grid-template-columns: repeat(2, 50%);
+  grid-template-columns: repeat(1, 100%);
   grid-template-rows: 1fr;
-  height: 30px; }
+  height: 30px;
+  position: relative; }
   @media only screen and (min-width: 520px) {
     .voting {
       height: 50px; } }
@@ -296,6 +296,29 @@ body {
   @media only screen and (min-width: 1200px) {
     .voting {
       height: 80px; } }
+  .voting__number {
+    color: white;
+    font-size: 1.5rem;
+    margin-left: 20px; }
+    .voting__number--right {
+      margin-right: 30px;
+      margin-left: 0; }
+
+.progress {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 95%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 20px;
+  z-index: 2; }
+
+.progress-left {
+  justify-content: flex-end;
+  padding-right: 20px;
+  background: red; }
 
 .border {
   border: 2px white solid; }
