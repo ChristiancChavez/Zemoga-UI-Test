@@ -28,9 +28,10 @@ let spanVotingDown = document.createElement('span');
 let numberVotingUp = document.createElement('span');
 let numberVotingDown = document.createElement('span');
 
+let idThumb;
 
 getIdThumbVote = (e) => {
-    let idThumb = e.target.id;
+    idThumb = e.target.id;
 
     thumbsVoteUp.classList.remove('border');
     thumbsVoteDown.classList.remove('border')
@@ -41,10 +42,12 @@ getIdThumbVote = (e) => {
 }
 
 addVoteNow = (e) => {
-    const thumbsIdBtn = e.target.id;
+    let widthVotingUp = 60;
+    let widthVotingDown = 0;
     const text = e.target.textContent;
     const textCharacterReview = characterReview.textContent;
     const principalTextCharacter = 'Vestibulum diam ante, porttitor a odio eget, rhoncus neque. Aenean eu velit libero';
+
     text === 'Vote again' ? e.target.innerHTML = 'vote now' : e.target.innerHTML = 'Vote again';
     textCharacterReview.length > 21 ? characterReview.innerHTML = 'Thank you for voting!' : characterReview.innerHTML = principalTextCharacter ;
     thumbsVoteUp.classList.remove('border');
@@ -52,7 +55,12 @@ addVoteNow = (e) => {
     thumbsVoteUp.classList.toggle('hidden');
     thumbsVoteDown.classList.toggle('hidden');
 
-    // thumbsIdBtn === 'upVote' ? thumbsVotingUp.appendChild
+    widthVotingUp < 100 ? widthVotingUp ++ : widthVotingUp = 100;
+    let currentWidthUp = `${widthVotingUp.toString()}%`;
+    thumbsVotingUp.style.width = currentWidthUp;
+    numberVotingUp.innerHTML = currentWidthUp;
+    widthVotingDown =  100 - widthVotingUp;
+    numberVotingDown.innerHTML = widthVotingDown;
 
 }
 
@@ -84,12 +92,13 @@ characters.map(people => {
     characterVotesAdv.innerHTML = 'Vote now';
     voting.classList.add('voting'); 
     thumbsVotingUp.classList.add('thumbs__thumb', 'thumbs__thumb--up', 'progress'); 
+    thumbsVotingUp.style.width = '60%';
     spanVotingUp.classList.add('thumbs__logo'); 
     thumbsVotingDown.classList.add('thumbs__thumb', 'thumbs__thumb--down', 'progress-left'); 
     spanVotingDown.classList.add('thumbs__logo', 'thumbs__logo--down'); 
     numberVotingUp.classList.add('voting__number'); 
-    numberVotingUp.innerHTML = '0%';
-    numberVotingDown.innerHTML = '0%';
+    numberVotingUp.innerHTML = '60%';
+    numberVotingDown.innerHTML = '40%';
     numberVotingDown.classList.add('voting__number', 'voting__number--right'); 
 
     mainCharacters.appendChild(character);

@@ -317,8 +317,7 @@ body {
 
 .progress-left {
   justify-content: flex-end;
-  padding-right: 20px;
-  background: red; }
+  padding-right: 20px; }
 
 .border {
   border: 2px white solid; }
