@@ -267,16 +267,17 @@ body {
       height: 30px; } }
   @media only screen and (min-width: 900px) {
     .small {
-      height: 35px;
+      height: 45px;
       margin-top: 12px; } }
+  @media only screen and (min-width: 1200px) {
+    .small {
+      margin-top: 14px; } }
 
 .vote {
   padding: 5px;
   margin-right: 10px;
   cursor: pointer;
   border: 2px transparent solid; }
-  .vote:hover {
-    border: 2px white solid; }
   @media only screen and (min-width: 520px) {
     .vote {
       padding: 7px; } }
@@ -441,10 +442,7 @@ body {
       grid-row-gap: 100px; } }
 
 .character {
-  background-repeat: no-repeat;
-  background-size: 160% 150%;
-  background-position: center;
-  box-shadow: inset 0px -170px 50px -2px rgba(0, 0, 0, 0.44);
+  box-shadow: inset 0px -300px 50px -2px rgba(0, 0, 0, 0.44);
   display: flex;
   flex-flow: column nowrap;
   justify-content: flex-end;
@@ -472,10 +470,13 @@ body {
   .character-profile {
     display: grid;
     grid-template-columns: 11% 89%;
-    grid-template-rows: 60px; }
-    @media only screen and (min-width: 520px) {
+    grid-template-rows: 100px; }
+    @media only screen and (min-width: 720px) {
       .character-profile {
         grid-template-columns: 12% 82%; } }
+    @media only screen and (min-width: 900px) {
+      .character-profile {
+        grid-template-rows: 120px; } }
     @media only screen and (min-width: 1000px) {
       .character-profile {
         grid-template-rows: 120px; } }
@@ -487,7 +488,7 @@ body {
       .character-profile__info > h2 {
         font-size: 1.8rem;
         margin: 3px 0; }
-        @media only screen and (min-width: 520px) {
+        @media only screen and (min-width: 720px) {
           .character-profile__info > h2 {
             font-size: 2.1rem; } }
         @media only screen and (min-width: 900px) {
@@ -495,7 +496,7 @@ body {
             font-size: 2.4rem; } }
         @media only screen and (min-width: 1000px) {
           .character-profile__info > h2 {
-            font-size: 3.5rem; } }
+            font-size: 3.6rem; } }
       .character-profile__info > span {
         font-size: 0.6rem; }
         @media only screen and (min-width: 900px) {
