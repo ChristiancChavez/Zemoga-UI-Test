@@ -35,13 +35,15 @@ getIdThumbVote = (e) => {
 }
 
 addVoteNow = (e) => {
-    const text = e.target.innerText;
-    e.target.innerText = 'Vote again';
-    characterReview.innerHTML = 'Thank you for voting!';
+    const text = e.target.textContent;
+    const textCharacterReview = characterReview.textContent;
+    const principalTextCharacter = 'Vestibulum diam ante, porttitor a odio eget, rhoncus neque. Aenean eu velit libero';
+    text === 'Vote again' ? e.target.innerHTML = 'vote now' : e.target.innerHTML = 'Vote again';
+    textCharacterReview.length > 21 ? characterReview.innerHTML = 'Thank you for voting!' : characterReview.innerHTML = principalTextCharacter ;
+    thumbsVoteUp.classList.remove('border');
+    thumbsVoteDown.classList.remove('border');
     thumbsVoteUp.classList.toggle('hidden');
     thumbsVoteDown.classList.toggle('hidden');
-    spanVotesUp.classList.remove('border');
-    spanVotesDown.classList.remove('border');
 }
 
 
