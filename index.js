@@ -1,33 +1,33 @@
 
 const characters = [
     {name:'Kanye West', image:'./Images/kanye.png', category:'Entertainment'},
-    {name:'Mark Suckenberg', image:'./Images/kanye..png', category:'Bussines'},
+    {name:'Mark Suckenberg', image:'./Images/kanye.png', category:'Bussines'},
     {name:'Cristina Fernández de Kirchner', image:'./Images/cristina.png', category:'Politics'},
     {name:'Malala Youzafzai', image:'./Images/malala.png', category:'Entertainment'},
-]
+];
 
-let character = document.createElement('div');
-let characterProfile = document.createElement('div');
-let thumbsThumb = document.createElement('div');
-let spanThumbs = document.createElement('span');
-let characterProfileInfo = document.createElement('div');
-let characterProfileInfoName = document.createElement('h2');
-let profileReview = document.createElement('span');
-let characterReview = document.createElement('p');
-let characterVotes = document.createElement('div');
-let thumbsVoteUp = document.createElement('div');
-let spanVotesUp = document.createElement('span');
-let thumbsVoteDown = document.createElement('div');
-let spanVotesDown = document.createElement('span');
-let characterVotesAdv = document.createElement('span');
-let voting = document.createElement('div');
-let thumbsVotingUp = document.createElement('div');
-let spanVotingUp = document.createElement('span');
-let thumbsVotingDown = document.createElement('div');
-let spanVotingDown = document.createElement('span');
-let numberVotingUp = document.createElement('span');
-let numberVotingDown = document.createElement('span');
-
+let mainCharacters = document.getElementById('mainCharacters');
+let character;
+let characterProfile;
+let thumbsThumb;
+let spanThumbs;
+let characterProfileInfo;
+let characterProfileInfoName;
+let profileReview;
+let characterReview;
+let characterVotes;
+let thumbsVoteUp;
+let spanVotesUp;
+let thumbsVoteDown;
+let spanVotesDown;
+let characterVotesAdv;
+let voting;
+let thumbsVotingUp;
+let spanVotingUp;
+let thumbsVotingDown;
+let spanVotingDown;
+let numberVotingUp;
+let numberVotingDown;
 let idThumb;
 
 getIdThumbVote = (e) => {
@@ -42,12 +42,13 @@ getIdThumbVote = (e) => {
 }
 
 addVoteNow = (e) => {
+    let voteIdThumb = idThumb;
     let widthVotingUp = 60;
     let widthVotingDown = 0;
     const text = e.target.textContent;
     const textCharacterReview = characterReview.textContent;
     const principalTextCharacter = 'Vestibulum diam ante, porttitor a odio eget, rhoncus neque. Aenean eu velit libero';
-
+    let currentWidthUp;
     text === 'Vote again' ? e.target.innerHTML = 'vote now' : e.target.innerHTML = 'Vote again';
     textCharacterReview.length > 21 ? characterReview.innerHTML = 'Thank you for voting!' : characterReview.innerHTML = principalTextCharacter ;
     thumbsVoteUp.classList.remove('border');
@@ -55,18 +56,45 @@ addVoteNow = (e) => {
     thumbsVoteUp.classList.toggle('hidden');
     thumbsVoteDown.classList.toggle('hidden');
 
-    widthVotingUp < 100 ? widthVotingUp ++ : widthVotingUp = 100;
-    let currentWidthUp = `${widthVotingUp.toString()}%`;
-    thumbsVotingUp.style.width = currentWidthUp;
-    numberVotingUp.innerHTML = currentWidthUp;
-    widthVotingDown =  100 - widthVotingUp;
-    numberVotingDown.innerHTML = widthVotingDown;
+    if(voteIdThumb === 'upVote'){
+        widthVotingUp < 100 ? widthVotingUp ++ : widthVotingUp = 100;
+        currentWidthUp = `${widthVotingUp.toString()}%`;
+        thumbsVotingUp.style.width = currentWidthUp;
+        numberVotingUp.innerHTML = currentWidthUp;
+        widthVotingDown =  100 - widthVotingUp;
+        numberVotingDown.innerHTML = widthVotingDown;
+    } else {
+
+    }
 
 }
 
 
-let mainCharacters = document.getElementById('mainCharacters');
-characters.map(people => {
+
+characters.map((people, i) => {
+
+    character = document.createElement('div');
+    characterProfile = document.createElement('div');
+    thumbsThumb = document.createElement('div');
+    spanThumbs = document.createElement('span');
+    characterProfileInfo = document.createElement('div');
+    characterProfileInfoName = document.createElement('h2');
+    profileReview = document.createElement('span');
+    characterReview = document.createElement('p');
+    characterVotes = document.createElement('div');
+    thumbsVoteUp = document.createElement('div');
+    spanVotesUp = document.createElement('span');
+    thumbsVoteDown = document.createElement('div');
+    spanVotesDown = document.createElement('span');
+    characterVotesAdv = document.createElement('span');
+    voting = document.createElement('div');
+    thumbsVotingUp = document.createElement('div');
+    spanVotingUp = document.createElement('span');
+    thumbsVotingDown = document.createElement('div');
+    spanVotingDown = document.createElement('span');
+    numberVotingUp = document.createElement('span');
+    numberVotingDown = document.createElement('span');
+
     character.classList.add('character');
     character.style.background = `url(${people.image}) no-repeat center`;
     character.style.backgroundSize = '140% 130%'
@@ -81,7 +109,7 @@ characters.map(people => {
     characterVotes.classList.add('character-votes');
     thumbsVoteUp.classList.add('thumbs__thumb', 'thumbs__thumb--up', 'vote');
     spanVotesUp.classList.add('thumbs__logo');
-    spanVotesUp.setAttribute("id", "upVote");
+    spanVotesUp.setAttribute("id", `upVote${i + 1}`);
     spanVotesUp.addEventListener("click", getIdThumbVote);
     thumbsVoteDown.classList.add('thumbs__thumb', 'thumbs__thumb--down', 'vote');
     spanVotesDown.classList.add('thumbs__logo', 'thumbs__logo--down');  

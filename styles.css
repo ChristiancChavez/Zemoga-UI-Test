@@ -477,35 +477,35 @@ body {
       width: 380px; } }
   @media only screen and (min-width: 756px) {
     .character {
-      height: 341px;
+      height: 390px;
       width: 300px; } }
   @media only screen and (min-width: 900px) {
     .character {
-      height: 375px;
+      height: 420px;
       width: 358px;
       box-shadow: inset 0px -260px 50px -2px rgba(0, 0, 0, 0.44); } }
   @media only screen and (min-width: 1000px) {
     .character {
-      height: 390px;
+      height: 470px;
       width: 400px; } }
   @media only screen and (min-width: 1200px) {
     .character {
-      height: 690px;
+      height: 740px;
       width: 700px; } }
   .character-profile {
     display: grid;
     grid-template-columns: 11% 89%;
-    grid-template-rows: 100px; }
+    grid-template-rows: 130px; }
     @media only screen and (min-width: 720px) {
       .character-profile {
         grid-template-columns: 12% 82%; } }
     @media only screen and (min-width: 900px) {
       .character-profile {
-        grid-template-rows: 120px;
+        grid-template-rows: 170px;
         margin-bottom: 30px; } }
     @media only screen and (min-width: 1000px) {
       .character-profile {
-        grid-template-rows: 120px; } }
+        grid-template-rows: 190px; } }
     .character-profile__info {
       display: flex;
       justify-items: center;
