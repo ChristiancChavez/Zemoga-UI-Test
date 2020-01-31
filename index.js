@@ -30,42 +30,56 @@ let numberVotingUp;
 let numberVotingDown;
 let idThumb;
 
-getIdThumbVote = (e) => {
+addBorderThumb = (e) => {
     idThumb = e.target.id;
+    console.log(idThumb);
+    let thumbsVoteSelectGrand = document.getElementById(idThumb).parentElement.parentElement;
+    let thumbsVoteSelectParent = document.getElementById(idThumb).parentElement;
 
-    thumbsVoteUp.classList.remove('border');
-    thumbsVoteDown.classList.remove('border')
+    thumbsVoteSelectGrand.childNodes[0].classList.remove('border');
+    thumbsVoteSelectGrand.childNodes[1].classList.remove('border');
+    
 
-    idThumb === 'upVote' ? thumbsVoteUp.classList.add('border') : thumbsVoteDown.classList.add('border');
-
+    thumbsVoteSelectGrand.childNodes[0].childNodes[0].id  === idThumb ? thumbsVoteSelectParent.classList.add('border') : thumbsVoteSelectParent.classList.add('border');
+    
     return idThumb;
 }
 
 addVoteNow = (e) => {
-    let voteIdThumb = idThumb;
-    let widthVotingUp = 60;
-    let widthVotingDown = 0;
+    let voteIdThumb = idThumb.slice(0,-1);
+    const btnVoteId = e.target.id;
+    const btnVoteSelectParent = document.getElementById(btnVoteId).parentElement;
+    console.log(btnVoteSelectParent, 'fffffff');
+    let widthVotingUp = 0;
+    let numberVotingDown = 0;
     const text = e.target.textContent;
-    const textCharacterReview = characterReview.textContent;
+    const textCharacterReview = btnVoteSelectParent.previousSibling;
+    const percentageProgress = btnVoteSelectParent.nextSibling;
+    console.log(textCharacterReview, 'kkkkk');
     const principalTextCharacter = 'Vestibulum diam ante, porttitor a odio eget, rhoncus neque. Aenean eu velit libero';
     let currentWidthUp;
+
     text === 'Vote again' ? e.target.innerHTML = 'vote now' : e.target.innerHTML = 'Vote again';
-    textCharacterReview.length > 21 ? characterReview.innerHTML = 'Thank you for voting!' : characterReview.innerHTML = principalTextCharacter ;
-    thumbsVoteUp.classList.remove('border');
-    thumbsVoteDown.classList.remove('border');
-    thumbsVoteUp.classList.toggle('hidden');
-    thumbsVoteDown.classList.toggle('hidden');
+    textCharacterReview.textContent.length > 21 ? textCharacterReview.innerHTML = 'Thank you for voting!' : textCharacterReview.innerHTML = principalTextCharacter ;
+    
+    btnVoteSelectParent.childNodes[0].classList.remove('border');
+    btnVoteSelectParent.childNodes[1].classList.remove('border');
+    btnVoteSelectParent.childNodes[0].classList.toggle('hidden');
+    btnVoteSelectParent.childNodes[1].classList.toggle('hidden');
 
+    console.log(percentageProgress.childNodes[1].childNodes[0], 'gggggg');
     if(voteIdThumb === 'upVote'){
-        widthVotingUp < 100 ? widthVotingUp ++ : widthVotingUp = 100;
-        currentWidthUp = `${widthVotingUp.toString()}%`;
-        thumbsVotingUp.style.width = currentWidthUp;
-        numberVotingUp.innerHTML = currentWidthUp;
-        widthVotingDown =  100 - widthVotingUp;
-        numberVotingDown.innerHTML = widthVotingDown;
+        widthVotingUp < 100 ? widthVotingUp += 1 : widthVotingUp = 100;
+        
     } else {
-
+        widthVotingUp >= 0 ? widthVotingUp -= 1 : widthVotingUp = 0;
+        currentWidthUp = `${widthVotingUp.toString()}%`;
     }
+    currentWidthUp = `${widthVotingUp.toString()}%`;
+    percentageProgress.childNodes[0].style.width = currentWidthUp;
+    percentageProgress.childNodes[0].childNodes[1].innerHTML = currentWidthUp;
+    numberVotingDown =  100 - widthVotingUp;
+    percentageProgress.childNodes[1].childNodes[0].innerHTML = `${numberVotingDown.toString()}%`;
 
 }
 
@@ -110,14 +124,15 @@ characters.map((people, i) => {
     thumbsVoteUp.classList.add('thumbs__thumb', 'thumbs__thumb--up', 'vote');
     spanVotesUp.classList.add('thumbs__logo');
     spanVotesUp.setAttribute("id", `upVote${i + 1}`);
-    spanVotesUp.addEventListener("click", getIdThumbVote);
+    spanVotesUp.addEventListener("click", addBorderThumb);
     thumbsVoteDown.classList.add('thumbs__thumb', 'thumbs__thumb--down', 'vote');
     spanVotesDown.classList.add('thumbs__logo', 'thumbs__logo--down');  
-    spanVotesDown.setAttribute("id", "downVote");
-    spanVotesDown.addEventListener("click", getIdThumbVote);  
+    spanVotesDown.setAttribute("id", `downVote${i + 1}`);
+    spanVotesDown.addEventListener("click", addBorderThumb);  
     characterVotesAdv.classList.add('character-votes__adv'); 
     characterVotesAdv.addEventListener("click", addVoteNow);
     characterVotesAdv.innerHTML = 'Vote now';
+    characterVotesAdv.setAttribute("id", `voteNow${i + 1}`);
     voting.classList.add('voting'); 
     thumbsVotingUp.classList.add('thumbs__thumb', 'thumbs__thumb--up', 'progress'); 
     thumbsVotingUp.style.width = '60%';
