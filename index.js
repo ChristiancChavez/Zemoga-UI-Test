@@ -52,44 +52,39 @@ addBorderThumb = (e) => {
 // votingCounter[nameId].votesUp
 const votingCounter = {
     kanye: {
-        id: 'kanye',
-        votesUp: 15,
-        votesDown: 5,
-        votesTotal: 20,
-        percentageUp: 50,
-        percentageDown: 20
+        votesUp: 0,
+        votesDown: 0,
+        votesTotal: 0,
+        percentageUp: 0,
+        percentageDown: 0
     }, 
     mark: {
-        id: 'mark',
-        votesUp: 15,
-        votesDown: 5,
-        votesTotal: 20,
-        percentageUp: 50,
-        percentageDown: 20
+        votesUp: 0,
+        votesDown: 0,
+        votesTotal: 0,
+        percentageUp: 0,
+        percentageDown: 0
     },
     cristina: {
-        id: 'cristina',
-        votesUp: 15,
-        votesDown: 5,
-        votesTotal: 20,
-        percentageUp: 50,
-        percentageDown: 20
+        votesUp: 0,
+        votesDown: 0,
+        votesTotal: 0,
+        percentageUp: 0,
+        percentageDown: 0
     },
     malala: {
-        id: 'malala',
-        votesUp: 15,
-        votesDown: 5,
-        votesTotal: 20,
-        percentageUp: 50,
-        percentageDown: 20
+        votesUp: 0,
+        votesDown: 0,
+        votesTotal: 0,
+        percentageUp: 0,
+        percentageDown: 0
     },
 };
 
 localStorage.setItem('votingCounter', JSON.stringify(votingCounter));
-const retrievedVotingCounter = JSON.parse(localStorage.getItem('votingCounter'));
-console.log(retrievedVotingCounter);
 
 addVoteNow = (e) => {
+    let retrievedVotingCounter = JSON.parse(localStorage.getItem('votingCounter'));
     let voteIdThumb = idThumb.slice(0,-1);
     const btnVoteId = e.target.id;
     const btnVoteSelectParent = document.getElementById(btnVoteId).parentElement;
@@ -98,6 +93,8 @@ addVoteNow = (e) => {
     const percentageProgress = btnVoteSelectParent.nextSibling;
     const principalTextCharacter = 'Vestibulum diam ante, porttitor a odio eget, rhoncus neque. Aenean eu velit libero';
     let currentWidthUp;
+    const idCharacter = btnVoteSelectParent.parentElement.id
+    console.log(idCharacter);
 
     if (text === 'Vote again') {
         e.target.innerHTML = 'vote now'; 
@@ -116,14 +113,21 @@ addVoteNow = (e) => {
             downVotes += 1;
         }
 
+        retrievedVotingCounter[idCharacter].votesUp = upvotes;
+        retrievedVotingCounter[idCharacter].votesUp = upvotes;
         totalVotes = downVotes + upVotes;
+        retrievedVotingCounter[idCharacter].votesTotal = totalVotes;
         percentageUpVotes = Math.floor((upVotes*100)/totalVotes);
+        retrievedVotingCounter[idCharacter].percentageUp = percentageUpVotes;
         percentageDownVotes = Math.floor((downVotes*100)/totalVotes);
+        retrievedVotingCounter[idCharacter].percentageDown = percentageDownVotes;
         
         currentWidthUp = `${percentageUpVotes.toString()}%`;
         percentageProgress.childNodes[0].style.width = currentWidthUp;
         percentageProgress.childNodes[0].childNodes[1].innerHTML = currentWidthUp;
         percentageProgress.childNodes[1].childNodes[0].innerHTML = `${percentageDownVotes.toString()}%`;
+
+        localStorage.setItem('votingCounter', JSON.stringify(retrievedVotingCounter));
 
     }
 }

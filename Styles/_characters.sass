@@ -18,7 +18,6 @@
     @media only screen and (min-width: 900px)
         justify-items: center
         grid-row-gap: 30px
-        margin: 30px 120px
     @media only screen and (min-width: 1200px)
         grid-row-gap: 100px
 
@@ -39,7 +38,10 @@
         width: 358px
         box-shadow: inset 0px -400px 50px -2px rgba(0,0,0,0.44)
     @media only screen and (min-width: 1000px)
-        height: 650px
+        height: 550px
+        width: 100%
+    @media only screen and (min-width: 1500px)
+        height: 700px
         width: 100%
     &-profile
         display: grid
@@ -47,15 +49,13 @@
         @media only screen and (min-width: 720px)
             grid-template-columns: 12% 82%
         @media only screen and (min-width: 900px)
-            grid-template-rows: 120px
             margin-bottom: 30px
-        // @media only screen and (min-width: 1000px)
-        //     grid-template-rows: 210px
         &__info
             display: flex
             justify-items: center
             flex-flow: column nowrap
             text-align: left
+            align-items: flex-start
             >h2
                 font-size: 1.8rem
                 margin: 3px 0
@@ -97,11 +97,11 @@
         margin-bottom: 15px
         cursor: pointer
         @media only screen and (min-width: 520px)
-            padding: 0 45px 0 40px
+            padding: 0 40px 0 40px
             margin-bottom: 25px
         @media only screen and (min-width: 1000px)
             margin-bottom: 35px
-            padding: 0 45px 0 80px
+            padding: 0 35px 0 70px
         &__adv
             background: transparent
             color: white

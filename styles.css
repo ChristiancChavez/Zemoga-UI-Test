@@ -464,8 +464,7 @@ body {
   @media only screen and (min-width: 900px) {
     .characters {
       justify-items: center;
-      grid-row-gap: 30px;
-      margin: 30px 120px; } }
+      grid-row-gap: 30px; } }
   @media only screen and (min-width: 1200px) {
     .characters {
       grid-row-gap: 100px; } }
@@ -490,7 +489,11 @@ body {
       box-shadow: inset 0px -400px 50px -2px rgba(0, 0, 0, 0.44); } }
   @media only screen and (min-width: 1000px) {
     .character {
-      height: 650px;
+      height: 550px;
+      width: 100%; } }
+  @media only screen and (min-width: 1500px) {
+    .character {
+      height: 700px;
       width: 100%; } }
   .character-profile {
     display: grid;
@@ -500,13 +503,13 @@ body {
         grid-template-columns: 12% 82%; } }
     @media only screen and (min-width: 900px) {
       .character-profile {
-        grid-template-rows: 120px;
         margin-bottom: 30px; } }
     .character-profile__info {
       display: flex;
       justify-items: center;
       flex-flow: column nowrap;
-      text-align: left; }
+      text-align: left;
+      align-items: flex-start; }
       .character-profile__info > h2 {
         font-size: 1.8rem;
         margin: 3px 0; }
@@ -558,12 +561,12 @@ body {
     cursor: pointer; }
     @media only screen and (min-width: 520px) {
       .character-votes {
-        padding: 0 45px 0 40px;
+        padding: 0 40px 0 40px;
         margin-bottom: 25px; } }
     @media only screen and (min-width: 1000px) {
       .character-votes {
         margin-bottom: 35px;
-        padding: 0 45px 0 80px; } }
+        padding: 0 35px 0 70px; } }
     .character-votes__adv {
       background: transparent;
       color: white;
@@ -612,7 +615,7 @@ body {
           font-size: 1.6rem; } }
       @media only screen and (min-width: 1000px) {
         .submit-info__text {
-          font-size: 2rem; } }
+          font-size: 1.8rem; } }
     .submit-info__btn {
       background: transparent;
       font-size: 0.9rem;
