@@ -60,40 +60,38 @@ addVoteNow = (e) => {
     const principalTextCharacter = 'Vestibulum diam ante, porttitor a odio eget, rhoncus neque. Aenean eu velit libero';
     let currentWidthUp;
 
-    text === 'Vote again' ? e.target.innerHTML = 'vote now' : e.target.innerHTML = 'Vote again';
-    textCharacterReview.textContent.length > 21 ? textCharacterReview.innerHTML = 'Thank you for voting!' : textCharacterReview.innerHTML = principalTextCharacter ;
-    
-    btnVoteSelectParent.childNodes[0].classList.remove('border');
-    btnVoteSelectParent.childNodes[1].classList.remove('border');
-    btnVoteSelectParent.childNodes[0].classList.toggle('hidden');
-    btnVoteSelectParent.childNodes[1].classList.toggle('hidden');
-
-
-    if(voteIdThumb === 'upVote'){
-        upVotes += 1;
-        console.log(upVotes);
-        // resultUpVotes < 100 ? resultUpVotes += 1 : resultUpVotes = 100;
-        // resultDownVotes > 0 ? resultDownVotes -= 1 : resultDownVotes = 0;
-
-        
+    if (text === 'Vote again') {
+        e.target.innerHTML = 'vote now'; 
+        textCharacterReview.innerHTML = principalTextCharacter ;
+        btnVoteSelectParent.childNodes[0].classList.remove('hidden');
+        btnVoteSelectParent.childNodes[1].classList.remove('hidden');
     } else {
-        downVotes += 1;
-        console.log(downVotes);
-        // resultDownVotes < 100 ? resultDownVotes += 1 : resultDownVotes = 100;
-        // resultUpVotes > 0 ? resultUpVotes -= 1 : resultUpVotes = 0;
+        e.target.innerHTML = 'Vote again';
+        textCharacterReview.innerHTML = 'Thank you for voting!'
+        btnVoteSelectParent.childNodes[0].classList.add('hidden');
+        btnVoteSelectParent.childNodes[1].classList.add('hidden');
+
+        if(voteIdThumb === 'upVote'){
+            upVotes += 1;
+            console.log(upVotes);           
+        } else {
+            downVotes += 1;
+            console.log(downVotes);
+        }
+
+        totalVotes = downVotes + upVotes;
+        console.log(totalVotes, 'total votes');
+        percentageUpVotes = Math.floor((upVotes*100)/totalVotes);
+        percentageDownVotes = Math.floor((downVotes*100)/totalVotes);
+        
+        currentWidthUp = `${percentageUpVotes.toString()}%`;
+        percentageProgress.childNodes[0].style.width = currentWidthUp;
+        percentageProgress.childNodes[0].childNodes[1].innerHTML = currentWidthUp;
+        percentageProgress.childNodes[1].childNodes[0].innerHTML = `${percentageDownVotes.toString()}%`;
+
     }
-
-    totalVotes = downVotes + upVotes;
-    console.log(totalVotes, 'total votes');
-    percentageUpVotes = Math.floor((upVotes*100)/totalVotes);
-    percentageDownVotes = Math.floor((downVotes*100)/totalVotes);
-    
-    currentWidthUp = `${percentageUpVotes.toString()}%`;
-    percentageProgress.childNodes[0].style.width = currentWidthUp;
-    percentageProgress.childNodes[0].childNodes[1].innerHTML = currentWidthUp;
-    percentageProgress.childNodes[1].childNodes[0].innerHTML = `${percentageDownVotes.toString()}%`;
-
 }
+
 
 characters.map((people, i) => {
 
