@@ -30,15 +30,20 @@ let numberVotingUp;
 let numberVotingDown;
 let idThumb;
 
+let percentageUpVotes = 0;
+let percentageDownVotes = 0;
+let upVotes = 0;
+let downVotes = 0;
+let totalVotes = 0;
+
+
 addBorderThumb = (e) => {
     idThumb = e.target.id;
-    console.log(idThumb);
-    let thumbsVoteSelectGrand = document.getElementById(idThumb).parentElement.parentElement;
-    let thumbsVoteSelectParent = document.getElementById(idThumb).parentElement;
+    const thumbsVoteSelectGrand = document.getElementById(idThumb).parentElement.parentElement;
+    const thumbsVoteSelectParent = document.getElementById(idThumb).parentElement;
 
     thumbsVoteSelectGrand.childNodes[0].classList.remove('border');
     thumbsVoteSelectGrand.childNodes[1].classList.remove('border');
-    
 
     thumbsVoteSelectGrand.childNodes[0].childNodes[0].id  === idThumb ? thumbsVoteSelectParent.classList.add('border') : thumbsVoteSelectParent.classList.add('border');
     
@@ -49,13 +54,9 @@ addVoteNow = (e) => {
     let voteIdThumb = idThumb.slice(0,-1);
     const btnVoteId = e.target.id;
     const btnVoteSelectParent = document.getElementById(btnVoteId).parentElement;
-    console.log(btnVoteSelectParent, 'fffffff');
-    let widthVotingUp = 0;
-    let numberVotingDown = 0;
     const text = e.target.textContent;
     const textCharacterReview = btnVoteSelectParent.previousSibling;
     const percentageProgress = btnVoteSelectParent.nextSibling;
-    console.log(textCharacterReview, 'kkkkk');
     const principalTextCharacter = 'Vestibulum diam ante, porttitor a odio eget, rhoncus neque. Aenean eu velit libero';
     let currentWidthUp;
 
@@ -67,23 +68,32 @@ addVoteNow = (e) => {
     btnVoteSelectParent.childNodes[0].classList.toggle('hidden');
     btnVoteSelectParent.childNodes[1].classList.toggle('hidden');
 
-    console.log(percentageProgress.childNodes[1].childNodes[0], 'gggggg');
+
     if(voteIdThumb === 'upVote'){
-        widthVotingUp < 100 ? widthVotingUp += 1 : widthVotingUp = 100;
+        upVotes += 1;
+        console.log(upVotes);
+        // resultUpVotes < 100 ? resultUpVotes += 1 : resultUpVotes = 100;
+        // resultDownVotes > 0 ? resultDownVotes -= 1 : resultDownVotes = 0;
+
         
     } else {
-        widthVotingUp >= 0 ? widthVotingUp -= 1 : widthVotingUp = 0;
-        currentWidthUp = `${widthVotingUp.toString()}%`;
+        downVotes += 1;
+        console.log(downVotes);
+        // resultDownVotes < 100 ? resultDownVotes += 1 : resultDownVotes = 100;
+        // resultUpVotes > 0 ? resultUpVotes -= 1 : resultUpVotes = 0;
     }
-    currentWidthUp = `${widthVotingUp.toString()}%`;
+
+    totalVotes = downVotes + upVotes;
+    console.log(totalVotes, 'total votes');
+    percentageUpVotes = Math.floor((upVotes*100)/totalVotes);
+    percentageDownVotes = Math.floor((downVotes*100)/totalVotes);
+    
+    currentWidthUp = `${percentageUpVotes.toString()}%`;
     percentageProgress.childNodes[0].style.width = currentWidthUp;
     percentageProgress.childNodes[0].childNodes[1].innerHTML = currentWidthUp;
-    numberVotingDown =  100 - widthVotingUp;
-    percentageProgress.childNodes[1].childNodes[0].innerHTML = `${numberVotingDown.toString()}%`;
+    percentageProgress.childNodes[1].childNodes[0].innerHTML = `${percentageDownVotes.toString()}%`;
 
 }
-
-
 
 characters.map((people, i) => {
 
@@ -140,8 +150,8 @@ characters.map((people, i) => {
     thumbsVotingDown.classList.add('thumbs__thumb', 'thumbs__thumb--down', 'progress-left'); 
     spanVotingDown.classList.add('thumbs__logo', 'thumbs__logo--down'); 
     numberVotingUp.classList.add('voting__number'); 
-    numberVotingUp.innerHTML = '60%';
-    numberVotingDown.innerHTML = '40%';
+    numberVotingUp.innerHTML = '0%';
+    numberVotingDown.innerHTML = '0%';
     numberVotingDown.classList.add('voting__number', 'voting__number--right'); 
 
     mainCharacters.appendChild(character);
