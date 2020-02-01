@@ -6,37 +6,36 @@ const characters = [
     {name:'Malala Youzafzai', image:'./Images/malala.png', category:'Entertainment'},
 ];
 
-let mainCharacters = document.getElementById('mainCharacters');
-let character;
-let characterProfile;
-let thumbsThumb;
-let spanThumbs;
-let characterProfileInfo;
-let characterProfileInfoName;
-let profileReview;
-let characterReview;
-let characterVotes;
-let thumbsVoteUp;
-let spanVotesUp;
-let thumbsVoteDown;
-let spanVotesDown;
-let characterVotesAdv;
-let voting;
-let thumbsVotingUp;
-let spanVotingUp;
-let thumbsVotingDown;
-let spanVotingDown;
-let numberVotingUp;
-let numberVotingDown;
-let idThumb;
+let mainCharacters = document.getElementById('mainCharacters'),
+    character,
+    characterProfile,
+    thumbsThumb,
+    spanThumbs,
+    characterProfileInfo,
+    characterProfileInfoName,
+    profileReview,
+    characterReview,
+    characterVotes,
+    thumbsVoteUp,
+    spanVotesUp,
+    thumbsVoteDown,
+    spanVotesDown,
+    characterVotesAdv,
+    voting,
+    thumbsVotingUp,
+    spanVotingUp,
+    thumbsVotingDown,
+    spanVotingDown,
+    numberVotingUp,
+    numberVotingDown,
+    idThumb,
+    percentageUpVotes = 0,
+    percentageDownVotes = 0,
+    upVotes = 0,
+    downVotes = 0,
+    totalVotes = 0;
 
-let percentageUpVotes = 0;
-let percentageDownVotes = 0;
-let upVotes = 0;
-let downVotes = 0;
-let totalVotes = 0;
-
-
+    
 addBorderThumb = (e) => {
     idThumb = e.target.id;
     const thumbsVoteSelectGrand = document.getElementById(idThumb).parentElement.parentElement;
@@ -49,6 +48,46 @@ addBorderThumb = (e) => {
     
     return idThumb;
 }
+// const nameId = 'mark'
+// votingCounter[nameId].votesUp
+const votingCounter = {
+    kanye: {
+        id: 'kanye',
+        votesUp: 15,
+        votesDown: 5,
+        votesTotal: 20,
+        percentageUp: 50,
+        percentageDown: 20
+    }, 
+    mark: {
+        id: 'mark',
+        votesUp: 15,
+        votesDown: 5,
+        votesTotal: 20,
+        percentageUp: 50,
+        percentageDown: 20
+    },
+    cristina: {
+        id: 'cristina',
+        votesUp: 15,
+        votesDown: 5,
+        votesTotal: 20,
+        percentageUp: 50,
+        percentageDown: 20
+    },
+    malala: {
+        id: 'malala',
+        votesUp: 15,
+        votesDown: 5,
+        votesTotal: 20,
+        percentageUp: 50,
+        percentageDown: 20
+    },
+};
+
+localStorage.setItem('votingCounter', JSON.stringify(votingCounter));
+const retrievedVotingCounter = JSON.parse(localStorage.getItem('votingCounter'));
+console.log(retrievedVotingCounter);
 
 addVoteNow = (e) => {
     let voteIdThumb = idThumb.slice(0,-1);
@@ -72,15 +111,12 @@ addVoteNow = (e) => {
         btnVoteSelectParent.childNodes[1].classList.add('hidden');
 
         if(voteIdThumb === 'upVote'){
-            upVotes += 1;
-            console.log(upVotes);           
+            upVotes += 1;          
         } else {
             downVotes += 1;
-            console.log(downVotes);
         }
 
         totalVotes = downVotes + upVotes;
-        console.log(totalVotes, 'total votes');
         percentageUpVotes = Math.floor((upVotes*100)/totalVotes);
         percentageDownVotes = Math.floor((downVotes*100)/totalVotes);
         
@@ -118,6 +154,7 @@ characters.map((people, i) => {
     numberVotingDown = document.createElement('span');
 
     character.classList.add('character');
+    character.setAttribute("id", `${people.name.toLowerCase().split(' ')[0]}`);
     character.style.background = `url(${people.image}) no-repeat center`;
     character.style.backgroundSize = '140% 130%'
     characterProfile.classList.add('character-profile');
