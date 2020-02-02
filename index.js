@@ -48,43 +48,42 @@ addBorderThumb = (e) => {
     
     return idThumb;
 }
-// const nameId = 'mark'
-// votingCounter[nameId].votesUp
-const votingCounter = {
+
+let votingCounter = {
     kanye: {
         votesUp: 0,
         votesDown: 0,
         votesTotal: 0,
         percentageUp: 0,
-        percentageDown: 0
+        percentageDown: 0, 
     }, 
     mark: {
         votesUp: 0,
         votesDown: 0,
         votesTotal: 0,
         percentageUp: 0,
-        percentageDown: 0
+        percentageDown: 0, 
     },
     cristina: {
         votesUp: 0,
         votesDown: 0,
         votesTotal: 0,
         percentageUp: 0,
-        percentageDown: 0
+        percentageDown: 0,    
     },
     malala: {
         votesUp: 0,
         votesDown: 0,
         votesTotal: 0,
         percentageUp: 0,
-        percentageDown: 0
+        percentageDown: 0,
     },
 };
 
 localStorage.setItem('votingCounter', JSON.stringify(votingCounter));
 
 addVoteNow = (e) => {
-    let retrievedVotingCounter = JSON.parse(localStorage.getItem('votingCounter'));
+    const retrievedVotingCounter = JSON.parse(localStorage.getItem('votingCounter'));
     let voteIdThumb = idThumb.slice(0,-1);
     const btnVoteId = e.target.id;
     const btnVoteSelectParent = document.getElementById(btnVoteId).parentElement;
@@ -93,7 +92,8 @@ addVoteNow = (e) => {
     const percentageProgress = btnVoteSelectParent.nextSibling;
     const principalTextCharacter = 'Vestibulum diam ante, porttitor a odio eget, rhoncus neque. Aenean eu velit libero';
     let currentWidthUp;
-    const idCharacter = btnVoteSelectParent.parentElement.id
+    let idCharacter = btnVoteSelectParent.parentElement.id;
+    let retrievedSelectCharacter = retrievedVotingCounter[idCharacter];
     console.log(idCharacter);
 
     if (text === 'Vote again') {
@@ -113,14 +113,14 @@ addVoteNow = (e) => {
             downVotes += 1;
         }
 
-        retrievedVotingCounter[idCharacter].votesUp = upvotes;
-        retrievedVotingCounter[idCharacter].votesUp = upvotes;
+        retrievedSelectCharacter.votesUp = upVotes;
+        retrievedSelectCharacter.votesDown = downVotes;
         totalVotes = downVotes + upVotes;
-        retrievedVotingCounter[idCharacter].votesTotal = totalVotes;
+        retrievedSelectCharacter.votesTotal = totalVotes;
         percentageUpVotes = Math.floor((upVotes*100)/totalVotes);
-        retrievedVotingCounter[idCharacter].percentageUp = percentageUpVotes;
+        retrievedSelectCharacter.percentageUp = percentageUpVotes;
         percentageDownVotes = Math.floor((downVotes*100)/totalVotes);
-        retrievedVotingCounter[idCharacter].percentageDown = percentageDownVotes;
+        retrievedSelectCharacter.percentageDown = percentageDownVotes;
         
         currentWidthUp = `${percentageUpVotes.toString()}%`;
         percentageProgress.childNodes[0].style.width = currentWidthUp;
